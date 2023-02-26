@@ -3,7 +3,26 @@
     <p><%= t('.empty_accommodations') %></p>
   </div>
 <% else %>
-  <% @accommodations.each do |accommodation| %>
-    <p><%= accommodation.name %></p>
-  <% end %>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% @accommodations.each do |accommodation| %>
+          <div class="col">
+            <div class="card shadow-sm">
+              <div class="p-3">
+                <% if accommodation.images.exists? %>
+                  <%= image_tag(accommodation.images.first, width: '100%', height: 200) %>
+                <% end %>
+              </div>
+              <%= link_to(accommodation_path(accommodation), class: 'text-decoration-none link-dark') do %>
+                <div class="card-body">
+                  <p class="card-text"><%= accommodation.city %>, <%= accommodation.country %></p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 <% end %>

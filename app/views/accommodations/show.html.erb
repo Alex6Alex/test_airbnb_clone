@@ -1,0 +1,21 @@
+<div class="col-lg-8 mx-auto p-4 py-md-5">
+  <header class="align-items-center pb-3 mb-5 border-bottom">
+    <div><p class="fs-4"><%= @accommodation.name %></p></div>
+    <div><span><%= @accommodation.city %>, <%= @accommodation.country %></span></div>
+  </header>
+  <main>
+    <% if @accommodation.images.exists? %>
+      <div>
+        <%= image_tag(@accommodation.images.first) %>
+      </div>
+    <% end %>
+    <p>Owner: <%= @accommodation.user_username %></p>
+    <div>
+      <span><%= pluralize(@accommodation.person_count, t('.guest_signular_form')) %></span>
+      <span>|</span>
+      <span><%= pluralize(@accommodation.bed_count, t('.bed_singular_form')) %></span>
+    </div>
+    <p class="fs-5 col-md-8"><%= @accommodation.description %></p>
+    <hr class="col-3 col-md-2 mb-5">
+  </main>
+</div>

@@ -12,3 +12,8 @@ Style/Documentation:
 Metrics/MethodLength:
   Exclude:
     - 'db/migrate/20230226081902_devise_create_users.rb'
+    - 'db/migrate/20230226105220_create_active_storage_tables.active_storage.rb'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/20230226105220_create_active_storage_tables.active_storage.rb'

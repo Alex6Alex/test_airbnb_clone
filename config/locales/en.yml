@@ -1,11 +1,14 @@
 en:
   layout:
     header:
-      navbar-brand: Accommodations
-      sign_in: Sign in
-      sign_up: Sign up
-      sign_out: Sign out
+      navbar-brand: "Accommodations"
+      sign_in: "Sign in"
+      sign_up: "Sign up"
+      sign_out: "Sign out"
   accommodations:
     index:
-      empty_accommodations: Unfortunately, there is no accommodations available at this time.
-        Try changing your request or come back later.
+      empty_accommodations: "Unfortunately, there is no accommodations available at this time.
+        Try changing your request or come back later."
+    show:
+      guest_signular_form: "Guest"
+      bed_singular_form: "Bed"
