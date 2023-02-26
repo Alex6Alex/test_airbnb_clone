@@ -15,6 +15,7 @@ This is a test project. The aim of the project is to make a clone of Airbnb. The
 ### Extras:
 
 - [x] Add dockerfile and docker support
+- [ ] Add images for accommodation to seeds
 
 ## Launching an application using Docker
 
