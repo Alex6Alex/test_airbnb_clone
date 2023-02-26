@@ -4,7 +4,7 @@ This is a test project. The aim of the project is to make a clone of Airbnb. The
 
 ## Todo list
 
-- [ ] Add a home page, where the accommodation will be displayed
+- [x] Add a home page, where the accommodation will be displayed
 - [ ] Add the ability to authenticate users
 - [ ] Add an accommodation model
 - [ ] Add ability to add housing information
