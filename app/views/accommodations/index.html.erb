@@ -1,0 +1,9 @@
+<% if @accommodations.count.zero? %>
+  <div class='container bg-light h-100'>
+    <p><%= t('.empty_accommodations') %></p>
+  </div>
+<% else %>
+  <% @accommodations.each do |accommodation| %>
+    <p><%= accommodation.name %></p>
+  <% end %>
+<% end %>
