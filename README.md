@@ -54,4 +54,4 @@ Then just execute the commands:
 
 ## Database structure
 
-![img.png](img.png)
+![diagram.png](diagram.png)
