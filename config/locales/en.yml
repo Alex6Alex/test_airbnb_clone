@@ -15,3 +15,8 @@ en:
       per_night: "per night"
       check-in: "Check-in"
       check-out: "Check-out"
+      book: "Book accommodation"
+  bookings:
+    create:
+      successful: "Accommodation was booked successfully"
+      error: "Unfortunately, the accommodation was not booked"

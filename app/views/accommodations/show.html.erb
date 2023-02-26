@@ -24,6 +24,9 @@
             <strong class="d-inline-block mb-2 text-dark"><%= "#{@accommodation.nearest_rental_price} #{t('.per_night')}" %></strong>
             <div class="mb-1 text-muted"><%= "#{t('.check-in')}: #{@accommodation.nearest_start_date}" %></div>
             <div class="mb-1 text-muted"><%= "#{t('.check-out')}: #{@accommodation.nearest_end_date}" %></div>
+            <%= form_for([@accommodation.nearest_rental_offer, @booking]) do |f| %>
+              <%= f.submit(t('.book'), class: 'w-100 btn btn-primary') %>
+            <% end %>
           </div>
         </div>
       </div>

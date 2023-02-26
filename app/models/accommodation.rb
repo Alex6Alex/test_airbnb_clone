@@ -10,6 +10,10 @@ class Accommodation < ApplicationRecord
 
   delegate :username, to: :user, prefix: true
 
+  def nearest_rental_offer
+    rental_offers.first
+  end
+
   def nearest_rental_price
     rental_offers.first&.day_price.to_f
   end

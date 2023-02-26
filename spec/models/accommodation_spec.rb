@@ -15,7 +15,7 @@ RSpec.describe Accommodation do
   it { is_expected.to validate_presence_of(:bed_count) }
   it { is_expected.to validate_presence_of(:description) }
 
-  shared_examples 'rentable' do |exp1, exp2|
+  shared_examples 'rentable' do |exp1|
     context 'when accommodation has not rental offers' do
       it { expect(result).to eq(exp1) }
     end
@@ -25,25 +25,35 @@ RSpec.describe Accommodation do
 
       before { create(:rental_offer, accommodation: subject) }
 
-      it { expect(result).to eq(exp2) }
+      it { expect(result).to eq(expected_result) }
     end
+  end
+
+  describe '#nearest_rental_offer' do
+    let(:result) { subject.nearest_rental_offer }
+    let(:expected_result) { subject.rental_offers.first }
+
+    it_behaves_like 'rentable', nil
   end
 
   describe '#nearest_rental_price' do
     let(:result) { subject.nearest_rental_price }
+    let(:expected_result) { 100.0 }
 
-    it_behaves_like 'rentable', 0, 100.0
+    it_behaves_like 'rentable', 0
   end
 
   describe '#nearest_start_date' do
     let(:result) { subject.nearest_start_date }
+    let(:expected_result) { Date.current }
 
-    it_behaves_like 'rentable', nil, Date.current
+    it_behaves_like 'rentable', nil
   end
 
   describe '#nearest_end_date' do
     let(:result) { subject.nearest_end_date }
+    let(:expected_result) { 10.days.from_now.to_date }
 
-    it_behaves_like 'rentable', nil, 10.days.from_now.to_date
+    it_behaves_like 'rentable', nil
   end
 end
