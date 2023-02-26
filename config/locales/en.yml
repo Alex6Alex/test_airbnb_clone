@@ -2,8 +2,9 @@ en:
   layout:
     header:
       navbar-brand: Accommodations
-      log_in: Log in
       sign_in: Sign in
+      sign_up: Sign up
+      sign_out: Sign out
   accommodations:
     index:
       empty_accommodations: Unfortunately, there is no accommodations available at this time.

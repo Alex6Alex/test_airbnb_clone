@@ -1,0 +1,25 @@
+<main class="form-signin w-50 m-auto">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render('devise/shared/error_messages', resource: resource) %>
+    <h1 class="h3 mb-3 fw-normal"><%= t('devise.registrations.registration_needs_information') %></h1>
+
+    <%= f.label :username %>
+    <%= f.text_field :username, autofocus: true, autocomplete: 'username', class: 'form-control' %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+
+    <%= f.label :phone_number %>
+    <%= f.phone_field :phone_number, autofocus: true, autocomplete: 'phone_number', class: 'form-control' %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control' %>
+
+    <%= f.submit(t('devise.registrations.confirm'), class: 'w-100 btn btn-lg btn-primary') %>
+  <% end %>
+
+  <%= render 'devise/shared/links' %>
+</main>

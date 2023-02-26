@@ -5,8 +5,12 @@
         <%= link_to(t('layout.header.navbar-brand'), root_path, class: 'navbar-brand m-1') %>
       </ul>
 
-      <%= link_to(t('layout.header.log_in'), root_path, class: 'd-block link-dark text-decoration-none m-1') %>
-      <%= link_to(t('layout.header.sign_in'), root_path, class: 'd-block link-dark text-decoration-none m-1') %>
+      <% if current_user.nil? %>
+        <%= link_to(t('layout.header.sign_in'), new_user_session_path, class: 'text-decoration-none m-1') %>
+        <%= link_to(t('layout.header.sign_up'), new_user_registration_path, class: 'text-decoration-none m-1') %>
+      <% else %>
+        <%= button_to(t('layout.header.sign_out'), destroy_user_session_path, method: 'delete', class: 'btn btn-link text-decoration-none m-1') %>
+      <% end %>
     </div>
   </div>
 </header>

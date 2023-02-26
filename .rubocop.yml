@@ -8,3 +8,7 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/20230226081902_devise_create_users.rb'
