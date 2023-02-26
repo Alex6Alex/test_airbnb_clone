@@ -17,6 +17,8 @@
               <%= link_to(accommodation_path(accommodation), class: 'text-decoration-none link-dark') do %>
                 <div class="card-body">
                   <p class="card-text"><%= accommodation.city %>, <%= accommodation.country %></p>
+                  <span><%= accommodation.nearest_start_date %> - <%= accommodation.nearest_end_date %></span>
+                  <p class="card-text"><%= accommodation.nearest_rental_price %></p>
                 </div>
               <% end %>
             </div>

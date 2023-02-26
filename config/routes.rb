@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :accommodations, only: %i[index show]
+
+  resources :rental_offers, only: [] do
+    resources :bookings, only: :create
+  end
 end
