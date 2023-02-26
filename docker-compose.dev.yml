@@ -1,0 +1,29 @@
+services:
+  web:
+    image: test_airbnb_clone
+    stdin_open: true
+    tty: true
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    env_file: .env
+    environment:
+      RAILS_ENV: development
+    restart: always
+
+  db:
+    image: postgres:15
+    env_file: .env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${TEST_AIRBNB_CLONE_DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${TEST_AIRBNB_CLONE_DATABASE_PASSWORD}
+    restart: always
+
+volumes:
+  postgres:
