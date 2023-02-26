@@ -12,3 +12,6 @@ en:
     show:
       guest_signular_form: "Guest"
       bed_singular_form: "Bed"
+      per_night: "per night"
+      check-in: "Check-in"
+      check-out: "Check-out"

@@ -2,7 +2,7 @@
 
 class AccommodationsController < ApplicationController
   def index
-    @accommodations = Accommodation.all
+    @accommodations = Accommodation.joins(:rental_offers).preload(:rental_offers)
 
     @accommodations = @accommodations.where.not(user: current_user) if current_user.present?
   end

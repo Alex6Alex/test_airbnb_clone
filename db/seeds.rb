@@ -2,7 +2,7 @@
 
 4.times do |i|
   num = i + 1
-  User.create!(
+  user = User.create!(
     username: "User_#{num}", email: "test#{num}@user.com", password: 'q1w2e3r4', phone_number: '+12345678990'
   )
 
@@ -14,7 +14,9 @@
       person_count: rand(1..3),
       bed_count: rand(1..2),
       description: "Test description #{num} #{j + 1}",
-      user: User.last
+      user: user
+    ).rental_offers.create!(
+      day_price: 234.0, start_available_date: Date.current, end_available_date: 10.days.from_now
     )
   end
 end
