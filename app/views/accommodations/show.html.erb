@@ -4,6 +4,11 @@
     <div><span><%= @accommodation.city %>, <%= @accommodation.country %></span></div>
   </header>
   <main>
+    <% if @accommodation.images.exists? %>
+      <div>
+        <%= image_tag(@accommodation.images.first) %>
+      </div>
+    <% end %>
     <p>Owner: <%= @accommodation.user_username %></p>
     <div>
       <span><%= pluralize(@accommodation.person_count, t('.guest_signular_form')) %></span>
