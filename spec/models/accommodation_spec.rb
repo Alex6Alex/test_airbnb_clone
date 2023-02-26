@@ -41,7 +41,7 @@ RSpec.describe Accommodation do
     it_behaves_like 'rentable', nil, Date.current
   end
 
-  describe '#nearest_start_date' do
+  describe '#nearest_end_date' do
     let(:result) { subject.nearest_end_date }
 
     it_behaves_like 'rentable', nil, 10.days.from_now.to_date
