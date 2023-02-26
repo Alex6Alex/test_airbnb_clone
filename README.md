@@ -10,6 +10,7 @@ This is a test project. The aim of the project is to make a clone of Airbnb. The
 - [ ] Add ability to add housing information
 - [ ] Add option to book accommodations
 - [ ] Add a strict validation for the user's phone number
+- [ ] Add alerts for better user experience
 
 ### Extras:
 
